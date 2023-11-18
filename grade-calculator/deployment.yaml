@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: regsds-grade-calculator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: regsds-grade-calculator
+  template:
+    metadata:
+      labels:
+        app: regsds-grade-calculator
+    spec:
+      volumes:
+        - name: regsds-grade-calculator
+          configMap: 
+            name: regsds-grade-calculator
+      containers:
+      - name: regsds-grade-calculator
+        image: abcdeclair/sds-grade-calculator:latest
+        imagePullPolicy: Always
+        envFrom:
+          - configMapRef:
+              name: regsds-grade-calculator
+        ports: 
+          - name: http
+            containerPort: 5002
+            
