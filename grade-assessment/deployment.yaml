@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: regsds-grade-assessment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: regsds-grade-assessment
+  template:
+    metadata:
+      labels:
+        app: regsds-grade-assessment
+    spec:
+      volumes:
+        - name: regsds-grade-assessment
+          configMap: 
+            name: regsds-grade-assessment
+      containers:
+      - name: regsds-grade-assessment
+        image: jojopnz/sds-grade-assessment
+        imagePullPolicy: Always
+        envFrom:
+          - configMapRef:
+              name: regsds-grade-assessment
+        ports: 
+          - name: http
+            containerPort: 5003
+            
