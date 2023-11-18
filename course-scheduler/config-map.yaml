@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: regsds-course-scheduler
 data:
-  PORT: "5000"
+  PORT: "5001"
