@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: regsds-course-scheduler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: regsds-course-scheduler
+  template:
+    metadata:
+      labels:
+        app: regsds-course-scheduler
+    spec:
+      volumes:
+        - name: regsds-course-scheduler
+          configMap: 
+            name: regsds-course-scheduler
+      containers:
+      - name: regsds-course-scheduler
+        image: jojopnz/sds-course-scheduler:latest
+        imagePullPolicy: Always
+        envFrom:
+          - configMapRef:
+              name: regsds-course-scheduler
+        ports: 
+          - name: http
+            containerPort: 5000
+            
