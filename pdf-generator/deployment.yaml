@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: regsds-pdf-generator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: regsds-pdf-generator
+  template:
+    metadata:
+      labels:
+        app: regsds-pdf-generator
+    spec:
+      volumes:
+        - name: regsds-pdf-generator
+          configMap: 
+            name: regsds-pdf-generator
+      containers:
+      - name: regsds-pdf-generator
+        image: nitiwatowen/regsds-pdf-generator
+        imagePullPolicy: Always
+        envFrom:
+          - configMapRef:
+              name: regsds-pdf-generator
+        ports: 
+          - name: http
+            containerPort: 5004
+            
