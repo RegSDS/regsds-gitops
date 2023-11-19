@@ -34,10 +34,8 @@ the result should be similar to this
 ## How to deploy your application
 1. Clone the Kubernetes configuration repository using the following command  
 `git clone https://github.com/RegSDS/regsds-gitops`
-2. Navigate to the service folder of your choice using the cd command  
-`cd <SERVICE_FOLDER_PATH>`
-3. Apply the Kubernetes configuration by running the following command  
-`sudo k3s kubectl apply -f <DEPLOYMENT_FILE_PATH>`
-4. To check the status and location of each pod, use the following command  
+2. Apply the Kubernetes configuration by running the following command  
+`sudo k3s kubectl apply -f <DEPLOYMENT_FILE_PATH> .`
+3. To check the status and location of each pod, use the following command  
 `sudo k3s kubectl get pods -o wide`
 
