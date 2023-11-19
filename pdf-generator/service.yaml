@@ -5,6 +5,7 @@ metadata:
 spec: 
   selector:
     app: regsds-pdf-generator
+  type: LoadBalancer
   ports:
     - name: http
       port: 5004

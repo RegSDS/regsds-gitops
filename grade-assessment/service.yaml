@@ -5,6 +5,7 @@ metadata:
 spec: 
   selector:
     app: regsds-grade-assessment
+  type: LoadBalancer
   ports:
     - name: http
       port: 5003

@@ -5,6 +5,7 @@ metadata:
 spec: 
   selector:
     app: regsds-grade-calculator
+  type: LoadBalancer
   ports:
     - name: http
       port: 5002

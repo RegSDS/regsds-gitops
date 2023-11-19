@@ -5,6 +5,7 @@ metadata:
 spec: 
   selector:
     app: regsds-course-scheduler
+  type: LoadBalancer
   ports:
     - name: http
       port: 5001

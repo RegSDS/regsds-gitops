@@ -5,6 +5,7 @@ metadata:
 spec: 
   selector:
     app: regsds-frontend
+  type: LoadBalancer
   ports:
     - name: http
       port: 3000
