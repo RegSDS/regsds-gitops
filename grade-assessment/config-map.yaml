@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: regsds-grade-assessment
 data:
-  PORT: "5003"
+  GRADE_ASSESSMENT_PORT: "5003"
