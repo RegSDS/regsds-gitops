@@ -15,7 +15,7 @@
 ### Worker in each worker run command below in order
 1. Access the bootline file using the following command:  
 ``sudo nano /cmd/bootline.txt``
-2. Add the following line at the end of the /cmd/bootline.txt file:  
+2. Add the following line at the end of the /boot/cmdline.txt file:  
 ``cgroup_enable=memory cgroup_memory=1``   
 3. Install k3s script for the worker node by running the following command. Replace <YOUR_IP> and <PORT> with the IP address and port of your master node, and <YOUR_TOKEN> with the token obtained from the master node in Step 3 of the master setup:  
 ``curl -sfL https://get.k3s.io/ | K3S_URL=https://<YOUR_IP>:<PORT>/ K3S_TOKEN=<YOUR_TOKEN> sh - ``
