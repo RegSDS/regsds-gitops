@@ -23,7 +23,7 @@ The result from this command ``sudo k3s kubectl get node``  should display this
 ![image](https://github.com/RegSDS/regsds-gitops/assets/77723734/6e01ee98-261f-43c3-856e-41408f8a7ffb)
 
 
-### Worker in each worker run command below in order
+### Worker node
 1. Access the bootline file using the following command:  
 ``sudo nano /cmd/bootline.txt``
 2. Add the following line at the end of the /boot/cmdline.txt file:  
