@@ -13,6 +13,8 @@
 ``scp ~/.kube/config username@[worker-node-ip]:~/.kube/config``
 6. Assign role for each worker node with following command  
 ``sudo k3s kubectl label node <NODE_NAME> node-role.kubernetes.io/worker=worker``
+The result of all node should look like this
+![image](https://github.com/RegSDS/regsds-gitops/assets/77723734/27e554ee-b2bc-469b-8ced-70a2397ae02b)
 
 
 ### Worker in each worker run command below in order
