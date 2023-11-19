@@ -28,4 +28,10 @@ spec:
         ports: 
           - name: http
             containerPort: 5001
+        livenessProbe:
+          httpGet:
+            path: /healthy
+            port: 5001
+          initialDelaySeconds: 3
+          periodSeconds: 3
             
