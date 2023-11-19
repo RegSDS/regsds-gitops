@@ -12,6 +12,8 @@ spec:
       labels:
         app: regsds-grade-assessment
     spec:
+      nodeSelector:
+        node-role.kubernetes.io/worker: worker
       volumes:
         - name: regsds-grade-assessment
           configMap: 

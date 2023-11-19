@@ -12,6 +12,8 @@ spec:
       labels:
         app: regsds-course-scheduler
     spec:
+      nodeSelector:
+        node-role.kubernetes.io/worker: worker
       volumes:
         - name: regsds-course-scheduler
           configMap: 

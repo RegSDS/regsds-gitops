@@ -12,6 +12,8 @@ spec:
       labels:
         app: regsds-frontend
     spec:
+      nodeSelector:
+        node-role.kubernetes.io/worker: worker
       volumes:
         - name: regsds-frontend
           configMap: 
