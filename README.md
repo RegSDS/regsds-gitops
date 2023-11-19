@@ -1,10 +1,11 @@
 # Document: SDS project
 ## How to set up your Kubernetes cluster
 ### Master (VM ubuntu)
+#### Master 1
 1. Disable the Uncomplicated Firewall (UFW)  
 	``ufw disable``
-2. Install k3s script for the server (master) node:  
-  ``curl -sfL https://get.k3s.io | sh - ``
+2. Install k3s script and initialize the cluster for the server (master) node:  
+  ``curl -sfL https://get.k3s.io/ | K3S_TOKEN=regsds sh -s - server --cluster-init --tls-san=192.168.0.105 ``
 3. Retrieve the K3S_TOKEN for the agent (to be used in the worker node setup in Step 3):  
 ``sudo cat /var/lib/rancher/k3s/server/node-token``
 4. Identify the IP address of your VM Ubuntu using ``ifconfig`` (to be used in the worker node setup in Step 3).
