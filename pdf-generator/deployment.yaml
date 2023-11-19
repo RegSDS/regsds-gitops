@@ -14,6 +14,7 @@ spec:
     spec:
       nodeSelector:
         node-role.kubernetes.io/worker: worker
+        pdf-generator: "true"
       volumes:
         - name: regsds-pdf-generator
           configMap: 
