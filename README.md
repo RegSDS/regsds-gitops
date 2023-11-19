@@ -16,6 +16,12 @@
 The result of all node should look like this
 ![image](https://github.com/RegSDS/regsds-gitops/assets/77723734/27e554ee-b2bc-469b-8ced-70a2397ae02b)
 
+#### Master 2 
+1. To be another master, run this following command  
+``curl -sfL https://get.k3s.io/ | K3S_TOKEN=<TOKEN> sh -s - server --server https://<MASTER1_IP>:<PORT>``  
+The result from this command ``sudo k3s kubectl get node``  should display this  
+![image](https://github.com/RegSDS/regsds-gitops/assets/77723734/6e01ee98-261f-43c3-856e-41408f8a7ffb)
+
 
 ### Worker in each worker run command below in order
 1. Access the bootline file using the following command:  
@@ -35,7 +41,8 @@ The result should display the Kubernetes configuration.
 6. Check if the worker node is connected to the master node by running the following command:  
 ``sudo k3s kubectl --kubeconfig=./.kube/config get node``  
 the result should be similar to this
-![image](https://github.com/RegSDS/regsds-gitops/assets/88878365/a07fb990-1eb2-46e7-8629-9e9ef4385e0f)
+![image](https://github.com/RegSDS/regsds-gitops/assets/77723734/38a9736c-dcb9-4d94-b97a-42df7c31635f)
+
 
 ## How to deploy your application
 1. Clone the Kubernetes configuration repository using the following command  
