@@ -10,7 +10,7 @@
 ``sudo cat /var/lib/rancher/k3s/server/node-token``
 4. Identify the IP address of your VM Ubuntu using ``ifconfig`` (to be used in the worker node setup in Step 3).
 5. Copy the Kubernetes configuration file from the master node to each worker node. This file is typically located at ~/.kube/config. You can use the Secure Copy (SCP) command to achieve this. Replace [worker-node-ip] with the actual IP address of each worker node:  
-``scp ~/.kube/config username@[worker-node-ip]:~/.kube/``
+``scp ~/.kube/config username@[worker-node-ip]:~/.kube/config``
 
 ### Worker in each worker run command below in order
 1. Access the bootline file using the following command:  
