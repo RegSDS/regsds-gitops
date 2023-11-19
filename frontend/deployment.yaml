@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: regsds-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: regsds-frontend
+  template:
+    metadata:
+      labels:
+        app: regsds-frontend
+    spec:
+      volumes:
+        - name: regsds-frontend
+          configMap: 
+            name: regsds-frontend
+      containers:
+      - name: regsds-frontend
+        image: knotpp/sds-frontend
+        imagePullPolicy: Always
+        envFrom:
+          - configMapRef:
+              name: regsds-frontend
+        ports: 
+          - name: http
+            containerPort: 3000
+            
